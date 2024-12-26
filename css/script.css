@@ -14,7 +14,8 @@
 }
 
 .line{
-    width: 1300px;
+    display: none;
+    width: 1200px;
     margin: 0 auto;
     height: 5px;
     background-color: #353535;
