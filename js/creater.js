@@ -84,7 +84,8 @@ function color(node){
         "爪牙",
         "恶魔",
         "处决",
-        "负面能力"
+        "负面能力",
+        "错误"
     ];
     const blue = [
         "善良玩家",
@@ -96,6 +97,8 @@ function color(node){
         "镇民",
         "外来者",
         "善良",
+        "正确",
+        "存活"
     ];
     const purple = [
         "“疯狂”"
