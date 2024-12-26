@@ -1,0 +1,153 @@
+#panel{
+    margin: 0 auto;
+    width: 1500px;
+    height: 1920px;
+    background-color: #242424;
+}
+
+#title{
+    font-size: 55px;
+    height: 95px;
+    line-height: 95px;
+    text-align: center;
+    color: #fefefe;
+}
+
+.line{
+    width: 1300px;
+    margin: 0 auto;
+    height: 5px;
+    background-color: #353535;
+}
+
+#content{
+    height: 1712.5px;
+}
+
+#firstnight{
+    float: left;
+    width: 100px;
+    height: 100%;
+}
+
+.vline{
+    float: left;
+    width: 5px;
+    height: 100%;
+    background-color: #353535;
+}
+
+#characters{
+    float: left;
+    width: 1280px;
+    margin: 0 0px;
+    background-color: #fefefe;
+}
+
+#othernight{
+    float: left;
+    width: 100px;
+    height: 100%;
+}
+
+.characters.box{
+    margin-top: 10px;
+    clear: both;
+}
+
+
+.character{
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.titleline{
+    width: 1030px;
+    margin-top: 17.5px;
+    margin-left: 30px;
+    height: 5px;
+    background-color: #353535;
+    float: left;
+}
+
+#outsiders .titleline{
+    width: 1000px;
+}
+
+.characters.title{
+    font-size: 30px;
+    height: 36px;
+}
+
+.left.box{
+    float: left;
+    width: 50%;
+}
+
+.icon {
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    margin-left: 0;
+    background-size: 120%;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.description {
+    float: left;
+    width: 120px;
+    height: auto;
+}
+
+.name, .ability{
+    float: left;
+    width: 500px;
+    height: auto;
+    margin: 0px;
+    font-weight:600;
+}
+
+.name {
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.ability {
+    font-size: 20px;
+}
+
+.right.box{
+    float: left;
+    width: 50%;
+    height: auto;
+}
+
+#townsfolks .characters.title, #townsfolks .name, #outsiders .characters.title, #outsiders .name{
+    color: #385fdd;
+}
+#minions .characters.title, #demons .characters.title, #minions .name, #demons .name{
+    color: #e02121;
+}
+
+.left.box, .right.box{
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#townsfolks .left.box,#townsfolks .right.box{
+    height: 840px;
+}
+
+.nighticon{
+    height: 75px;
+    width: 75px;
+    margin: -10px auto;
+    background-size: 100%;
+    background-position-x: center;
+    background-position-y: center;
+}
