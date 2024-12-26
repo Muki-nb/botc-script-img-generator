@@ -2,6 +2,8 @@
 
  血染钟楼剧本图片生成器。
 
+ [点击前往页面](https://muki-nb.github.io/botc-script-img-generator/)
+
 # How to use
  1. 将剧本json复制到网页所示输入框
  2. 点击生成
