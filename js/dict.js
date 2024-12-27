@@ -2811,6 +2811,18 @@ const _characters = {
         "reminders": [],
         "setup": true
     },
+    "xxan": {
+        "id": "poisoner",
+        "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/xxan.png",
+        "edition": "custom",
+        "name": "限",
+        "ability": "在等同初始外来者数量的夜晚，所有镇民玩家中毒直到下个黄昏。[任意数量外来者]",
+        "team": "minion",
+        "sch_team": "爪牙",
+        "firstNight": 3017.5,
+        "otherNight": 8.5,
+        "setup": true
+    },
     "humeiniang": {
         "id": "humeiniang",
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/humeiniang.png",
@@ -2908,7 +2920,7 @@ const _characters = {
         "ability": "在你的首个夜晚，你要选择一名存活玩家：他死亡但会被当作存活。当他下一次死亡时，他重生，随后你重获能力。",
         "team": "minion",
         "sch_team": "爪牙",
-        "firstNight": 3029.5,
+        "firstNight": 3017.3,
         "otherNight": 54.5,
         "firstNightReminder": "唤醒画皮，让画皮选择一名存活玩家，那名存活玩家变成活尸。",
         "otherNightReminder": "如果首夜被画皮变成活尸的玩家死亡，他重生，然后画皮重获能力。唤醒画皮，让画皮选择一名存活玩家，那名存活玩家变成活尸。",
