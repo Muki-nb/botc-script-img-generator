@@ -89,10 +89,10 @@
 
 .icon {
     float: left;
-    height: 100px;
-    width: 100px;
-    margin: 10px;
-    background-size: 120%;
+    height: 115px;
+    width: 115px;
+    margin: 2.5px;
+    background-size: 100%;
     background-position-x: center;
     background-position-y: center;
 }
