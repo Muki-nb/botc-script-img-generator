@@ -2764,7 +2764,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/harpy.png",
         "edition": "custom",
         "name": "鹰身女妖",
-        "ability": "每个夜晚，你要选择两名玩家：明天第一名玩家需要“疯狂”地证明第二名玩家是邪恶的，否则他们职中可能会有人死亡。",
+        "ability": "每个夜晚，你要选择两名玩家：明天第一名玩家需要“疯狂”地证明第二名玩家是邪恶的，否则他们之中可能会有人死亡。",
         "team": "minion",
         "sch_team": "爪牙",
         "firstNight": 3027,
