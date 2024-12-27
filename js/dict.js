@@ -2745,7 +2745,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/riot.png",
         "edition": "custom",
         "name": "暴乱",
-        "ability": "被提名的玩家死亡，但他可以立刻再次发起提名（第三天白天他必须这么做）。在第三个白天结束时，邪恶阵营获胜。[所有爪牙都是暴乱]",
+        "ability": "在第三个白天，所有爪牙会变成暴乱，当天被提名的玩家会立即死亡且必须再次提名一名存活的玩家。",
         "team": "demon",
         "sch_team": "恶魔",
         "firstNight": 0,
@@ -2753,7 +2753,7 @@ const _characters = {
         "firstNightReminder": "",
         "otherNightReminder": "",
         "reminders": [],
-        "setup": true
+        "setup": false
     },
     "ojo": {
         "id": "ojo",
