@@ -11,8 +11,8 @@ function generator(json){
         },
         "firstnight" : [
             {"image" : "https://clocktower-wiki.gstonegames.com/images/thumb/5/5d/Dusk.png/75px-Dusk.png", "index" : 0},
-            {"image" : "https://clocktower-wiki.gstonegames.com/images/thumb/8/85/Mi.png/75px-Mi.png", "index" : 3000},
-            {"image" : "https://clocktower-wiki.gstonegames.com/images/thumb/1/18/Di.png/75px-Di.png", "index" : 5000}
+            {"image" : "https://clocktower-wiki.gstonegames.com/images/thumb/8/85/Mi.png/75px-Mi.png", "index" : 2000},
+            {"image" : "https://clocktower-wiki.gstonegames.com/images/thumb/1/18/Di.png/75px-Di.png", "index" : 3000}
         ],
         "othernight" : [
             {"image" : "https://clocktower-wiki.gstonegames.com/images/thumb/5/5d/Dusk.png/75px-Dusk.png", "index" : 0}
@@ -21,6 +21,11 @@ function generator(json){
     for(let item of json){
         if(item.id == '_meta'){
             obj.title = item.name;
+        }
+        if(item.id in _characters){
+            if(!("image" in item)){
+                item = _characters[item.id];
+            }
         }
         if(item.team in obj.characters){
             obj.characters[item.team].push({
@@ -122,10 +127,14 @@ function color(node){
     node.innerHTML = html;
 }
 
+function setname(name){
+    document.getElementById("title").innerText = name;
+    document.title = name;
+}
+
 function create(object){
     console.log(object);
-    document.getElementById("title").innerText = object.title;
-    document.title = object.title;
+    setname(object.title);
     for(let e of document.getElementsByClassName("left box")){
         e.innerHTML = "";
     }
