@@ -57,3 +57,9 @@ function setTitleBlack(){
 function setTitleWhite(){
     setTitleColor("white")
 }
+
+let showFlower = true;
+function changeFlower(){
+    showFlower = !showFlower;
+    for(let i of document.getElementsByClassName("outer-flower")) i.style.display = showFlower ? "block" : "none";
+}

@@ -3,6 +3,7 @@ function generator(json){
     if(!Array.isArray(json)) throw new Error('Parameter is not a Array.');
     let obj = {
         "title" : "",
+        "author" : "",
         "characters" : {
             "townsfolk" : [],
             "outsider" : [],
@@ -21,6 +22,7 @@ function generator(json){
     for(let item of json){
         if(item.id == '_meta'){
             obj.title = item.name;
+            obj.author = item.author;
         }
         if(item.id in _characters){
             if(!("image" in item)){
@@ -87,7 +89,9 @@ function color(node){
         "负面能力",
         "小恶魔",
         "小怪宝",
+        "狐媚娘",
         "被处决",
+        "杀死",
         "死亡",
         "邪恶",
         "落败",
@@ -108,8 +112,12 @@ function color(node){
         "镇民角色",
         "恢复健康",
         "起死回生",
+        "落难少女",
+        "有且只有",
         "外来者",
         "农夫",
+        "疯子",
+        "国王",
         "醉酒",
         "复活",
         "反刍",
@@ -135,8 +143,12 @@ function color(node){
     node.innerHTML = html;
 }
 
-function setname(name){
-    document.getElementById("title").innerText = name;
+function setname(name, author = ""){
+    if(name == "") name = document.title;
+    if(name == "血染钟楼剧本图片生成") name = "自定义剧本";
+    let text = name;
+    if(author != "") text += `<span>剧本作者：${author}</span>`;
+    document.getElementById("title").innerHTML = text;
     document.title = name;
 }
 
@@ -149,21 +161,40 @@ function create(object){
     for(let e of document.getElementsByClassName("right box")){
         e.innerHTML = "";
     }
-    for(let i = 0;i < 7;i++){
+    let cnt = 0, left = 0, right = 0, sum = 0;
+    cnt = object.characters["townsfolk"].length, left = Math.ceil(cnt / 2), right = cnt - left, sum += left;
+    
+    for(let i = 0;i < left;i++){
         document.getElementById("townsfolks").getElementsByClassName("left box")[0].appendChild(createCharacter(object.characters.townsfolk[i]));
     }
-    for(let i = 7;i < 13;i++){
+    for(let i = left;i < cnt;i++){
         document.getElementById("townsfolks").getElementsByClassName("right box")[0].appendChild(createCharacter(object.characters.townsfolk[i]));
     }
+    document.getElementById('townsfolks').getElementsByClassName("left box")[0].style.marginLeft = (cnt == 1) * 25 + "%";
+    if(cnt == 1) document.getElementById("townsfolks-right").style.height = "0px";
+    else document.getElementById("townsfolks-right").style.height = left * 120 + "px";
     for(let k in object.characters){
         if(k == "townsfolk") continue;
-        for(let i = 0;i < 2;i++){
+        cnt = object.characters[k].length, left = Math.ceil(cnt / 2), right = cnt - left, sum += left;
+        for(let i = 0;i < left;i++){
             document.getElementById(k + 's').getElementsByClassName("left box")[0].appendChild(createCharacter(object.characters[k][i]));
         }
-        for(let i = 2;i < 4;i++){
+        for(let i = left;i < cnt;i++){
             document.getElementById(k + 's').getElementsByClassName("right box")[0].appendChild(createCharacter(object.characters[k][i]));
         }
+
+        document.getElementById(k + 's').getElementsByClassName("left box")[0].style.marginLeft = (cnt == 1) * 25 + "%";
+        if(cnt == 1) document.getElementById(k + 's').getElementsByClassName("right box")[0].style.height = "0px";
+        else document.getElementById(k + 's').getElementsByClassName("right box")[0].style.height = "auto";
+
     }
+
+    document.getElementById("content").style.height = sum * 120 + 152.5 + "px";
+    //document.getElementById("panel").style.height = (sum <= 6 ? 1080 : 1920) + "px";
+
+    document.getElementById("outer-text").textContent = `外栏大小为 1500 * ${document.getElementById("panel").clientHeight}`;
+    document.getElementById("inner-text").textContent = `内栏大小为 1280 * ${document.getElementById("characters").clientHeight}`;
+
     let firstnight = document.getElementById('firstnight');
     firstnight.innerHTML = `
         <p><h1 style = "line-height: 10px; text-align: center; margin-top: 120px;color: #fefefe;">首个</h1></p>
