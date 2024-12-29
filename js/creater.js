@@ -65,7 +65,7 @@ function createCharacter(character){
     name.textContent = character.name;
     let ability = document.createElement("p");
     ability.classList.add("ability");
-    ability.textContent = character.ability;
+    ability.innerHTML = character.ability;
     color(ability);
     description.appendChild(name);
     description.appendChild(ability);

@@ -2,13 +2,35 @@
 <html>
     <head>
         <title>血染钟楼剧本图片生成</title>
+        <link href = "./css/print.css" rel="stylesheet" type="text/css" media="print">
         <link href = "./css/index.css" rel="stylesheet" type="text/css" >
         <link href = "./css/script.css" rel="stylesheet" type="text/css" >
-        <link href = "./css/print.css" rel="stylesheet" type="text/css" media="print">
+        <link href = "./css/menu.css" rel="stylesheet" type="text/css" >
         <script src = "./js/dict.js"></script>
         <script src = "./js/creater.js"></script>
     </head>
     <body>
+        <div class = "not-print" id = "menu">
+            <h4>上传外栏背景图</h4>
+            <input type = "file" id = "outer-image" accept = "image/*">
+            <hr>
+            <h4>上传内栏背景图↓</h4>
+            <input type = "file" id = "inner-image" accept = "image/*">
+            <hr>
+            <button onclick="onlyouter();">仅用外栏背景</button>
+            <hr>
+            <button onclick="defaultStyle();">恢复默认背景</button>
+            <hr>
+            <button onclick="setTitleBlack();">黑色标题</button>
+            <hr>
+            <button onclick="setTitleWhite();">白色标题</button>
+            <hr>
+            <i>
+                <h4>外栏大小为1500 * 1920</h4>
+                <h4>内栏大小为1280 * 1712.5</h4>
+                <h4>背景图会自适应大小，比例同上即可完整适配</h4>
+            </i>
+        </div>
         <div id = "panel">
             <div id = "title">
                 自定义剧本
@@ -267,7 +289,5 @@
         <h3 class="not-print" style="text-align: center;">注意：目前仅支持13/4/4/4的完整剧本。支持官方剧本制作器的json（请自行补充标题）。</h3>
         <h3 class="not-print" style="text-align: center;">2024/12/28 之后的实验性角色 暂未录入，这些角色以及自制角色等请使用完整 JSON 信息。</h3>
     </body>
-    <script>
-
-    </script>
+    <script src = "./js/style.js"></script>
 </html>
