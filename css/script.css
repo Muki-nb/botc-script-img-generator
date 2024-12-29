@@ -160,3 +160,28 @@
     background-position-x: center;
     background-position-y: center;
 }
+
+.jinx {
+    display: flex;
+    height: 30px;
+    width: 500px;
+    background-color: #cecece;
+    margin-top: 3px;
+    align-items: center;
+}
+
+.jinx div {
+    flex-shrink: 0;
+    filter: grayscale(80%);
+    height: 60px;
+    width: 60px;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center;
+}
+
+.jinx span {
+    margin-right: 6px;
+    font-size: 12px;
+    font-style: italic;
+}

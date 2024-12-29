@@ -17,7 +17,9 @@ function generator(json){
         ],
         "othernight" : [
             {"image" : "https://clocktower-wiki.gstonegames.com/images/thumb/5/5d/Dusk.png/75px-Dusk.png", "index" : 0}
-        ]
+        ],
+        "jinx" : {},
+        "all" : []
     };
     for(let item of json){
         if(item.id == '_meta'){
@@ -30,6 +32,7 @@ function generator(json){
             }
         }
         if(item.team in obj.characters){
+            obj.all.push(item);
             obj.characters[item.team].push({
                 "name" : item.name,
                 "ability" : item.ability,
@@ -49,12 +52,30 @@ function generator(json){
             }
         }
     }
+    for(let i of obj.all){
+        for(let j of obj.all){
+            if(havejinx(i.name, j.name)){
+                if(!(i.name in obj.jinx)) obj.jinx[i.name] = {};
+                obj.jinx[i.name][j.name] = getjinx(i.name, j.name);
+            }
+        }
+    }
     obj.firstnight.sort((a,b) => a.index - b.index);
     obj.othernight.sort((a,b) => a.index - b.index);
     return obj;
 }
 
-function createCharacter(character){
+function havejinx(a, b){
+    if(a in jinx) if(b in jinx[a]) return true;
+    return false;
+}
+
+function getjinx(a, b){
+    if(havejinx(a, b)) return jinx[a][b];
+    return "";
+}
+
+function createCharacter(character, object){
     let node = document.createElement("div");
     node.classList.add("character");
     let icon = document.createElement("div");
@@ -73,6 +94,25 @@ function createCharacter(character){
     description.appendChild(ability);
     node.appendChild(icon);
     node.appendChild(description);
+    
+    const jinxes = object.jinx;
+    const all = object.all;
+    if(character.name in jinxes){
+        for(let key in jinxes[character.name]){
+            let jin = document.createElement("div");
+            jin.classList.add("jinx");
+            let jinicon = document.createElement("div");
+            for(let i of all) if(i.name == key){
+                jinicon.style.backgroundImage = `url(${i.image})`;
+                break;
+            }
+            let jintext = document.createElement("span");
+            jintext.textContent = `(相克规则：${jinxes[character.name][key]})`;
+            jin.appendChild(jinicon);
+            jin.appendChild(jintext);
+            ability.appendChild(jin);
+        }
+    }
     return node;
 }
 
@@ -165,10 +205,10 @@ function create(object){
     cnt = object.characters["townsfolk"].length, left = Math.ceil(cnt / 2), right = cnt - left, sum += left;
     
     for(let i = 0;i < left;i++){
-        document.getElementById("townsfolks").getElementsByClassName("left box")[0].appendChild(createCharacter(object.characters.townsfolk[i]));
+        document.getElementById("townsfolks").getElementsByClassName("left box")[0].appendChild(createCharacter(object.characters.townsfolk[i], object));
     }
     for(let i = left;i < cnt;i++){
-        document.getElementById("townsfolks").getElementsByClassName("right box")[0].appendChild(createCharacter(object.characters.townsfolk[i]));
+        document.getElementById("townsfolks").getElementsByClassName("right box")[0].appendChild(createCharacter(object.characters.townsfolk[i], object));
     }
     document.getElementById('townsfolks').getElementsByClassName("left box")[0].style.marginLeft = (cnt == 1) * 25 + "%";
     if(cnt == 1) document.getElementById("townsfolks-right").style.height = "0px";
@@ -177,10 +217,10 @@ function create(object){
         if(k == "townsfolk") continue;
         cnt = object.characters[k].length, left = Math.ceil(cnt / 2), right = cnt - left, sum += left;
         for(let i = 0;i < left;i++){
-            document.getElementById(k + 's').getElementsByClassName("left box")[0].appendChild(createCharacter(object.characters[k][i]));
+            document.getElementById(k + 's').getElementsByClassName("left box")[0].appendChild(createCharacter(object.characters[k][i], object));
         }
         for(let i = left;i < cnt;i++){
-            document.getElementById(k + 's').getElementsByClassName("right box")[0].appendChild(createCharacter(object.characters[k][i]));
+            document.getElementById(k + 's').getElementsByClassName("right box")[0].appendChild(createCharacter(object.characters[k][i], object));
         }
 
         document.getElementById(k + 's').getElementsByClassName("left box")[0].style.marginLeft = (cnt == 1) * 25 + "%";

@@ -1,10 +1,14 @@
 #menu {
     position: fixed;
     left: 0;
-    top: 15%;
+    top: 20%;
     width: 175px;
-    height: 550px;
+    height: 500px;
     background-color: rgb(227, 227, 227);
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+#menu h4{
+    margin: 5px;
 }
