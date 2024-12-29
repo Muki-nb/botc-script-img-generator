@@ -154,7 +154,7 @@ function setname(name, author = ""){
 
 function create(object){
     console.log(object);
-    setname(object.title);
+    setname(object.title, object.author);
     for(let e of document.getElementsByClassName("left box")){
         e.innerHTML = "";
     }
