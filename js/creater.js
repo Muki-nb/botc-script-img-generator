@@ -234,7 +234,7 @@ function create(object){
 
     }
 
-    document.getElementById("content").style.height = sum * 120 + 152.5 + "px";
+    document.getElementById("content").style.height = sum * 120 + 182.5 + "px";
     //document.getElementById("panel").style.height = (sum <= 6 ? 1080 : 1920) + "px";
 
     document.getElementById("outer-text").textContent = `外栏大小为 1500 * ${document.getElementById("panel").clientHeight}`;
