@@ -31,6 +31,11 @@ function generator(json){
                 item = _characters[item.id];
             }
         }
+        if(item.team == "a jinxed"){
+            const [i, j] = item.name.split('&');
+            if(!(i in obj.jinx)) obj.jinx[i] = {};
+            if(!(j in obj.jinx[i])) obj.jinx[i][j] = item.ability;
+        }
         if(item.team in obj.characters){
             obj.all.push(item);
             obj.characters[item.team].push({
@@ -56,7 +61,7 @@ function generator(json){
         for(let j of obj.all){
             if(havejinx(i.name, j.name)){
                 if(!(i.name in obj.jinx)) obj.jinx[i.name] = {};
-                obj.jinx[i.name][j.name] = getjinx(i.name, j.name);
+                if(!(j.name in obj.jinx[i.name])) obj.jinx[i.name][j.name] = getjinx(i.name, j.name);
             }
         }
     }
