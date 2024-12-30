@@ -2813,7 +2813,7 @@ const _characters = {
     },
     "xaan": {
         "id": "poisoner",
-        "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/xaan.png",
+        "image": "https://clocktower-wiki.gstonegames.com/images/thumb/b/b9/Xaan.png/300px-Xaan.png",
         "edition": "custom",
         "name": "限",
         "ability": "在等同初始外来者数量的夜晚，所有镇民玩家中毒直到下个黄昏。[任意数量外来者]",
