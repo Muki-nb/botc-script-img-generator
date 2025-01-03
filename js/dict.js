@@ -1135,7 +1135,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/alchemist.png",
         "edition": "custom",
         "name": "炼金术士",
-        "ability": "你拥有一个不在场的爪牙角色的能力。",
+        "ability": "你拥有一个爪牙角色的能力。当你使用能力时，说书人可能会要求你更换选择。",
         "team": "townsfolk",
         "sch_team": "镇民",
         "firstNight": 3.3,
