@@ -124,6 +124,7 @@ function createCharacter(character, object){
 function color(node){
     let html = node.innerHTML;
     const red = [
+        "选择或影响",
         "死于处决",
         "恶魔角色",
         "爪牙角色",
@@ -147,7 +148,9 @@ function color(node){
         "错误",
         "自杀",
         "暴乱",
-        "军团"
+        "军团",
+        "代价",
+        "伪装"
     ];
     const blue = [
         "外来者角色",
@@ -159,6 +162,8 @@ function color(node){
         "起死回生",
         "落难少女",
         "有且只有",
+        "有多准确",
+        "守夜人",
         "外来者",
         "农夫",
         "疯子",
@@ -169,7 +174,8 @@ function color(node){
         "镇民",
         "善良",
         "正确",
-        "存活"
+        "存活",
+        "获胜"
     ];
     const purple = [
         "非旅行者",
