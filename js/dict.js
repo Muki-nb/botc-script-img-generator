@@ -1002,7 +1002,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/preacher.png",
         "edition": "custom",
         "name": "传教士",
-        "ability": "每个夜晚，你要选择一名玩家：如果选中了爪牙，他会得知被传教士选中。所有被你选中的爪牙失去能力。",
+        "ability": "每个夜晚，你要选择一名玩家：如果你选中了爪牙，他会得知被传教士选中。<br>所有被你选中的爪牙失去能力。",
         "team": "townsfolk",
         "sch_team": "镇民",
         "firstNight": 3015,
@@ -1251,7 +1251,7 @@ const _characters = {
         "firstNightReminder": "",
         "otherNightReminder": "",
         "reminders": [
-            "死于今日",
+            "饱餐",
             "中毒"
         ],
         "setup": false
@@ -1704,7 +1704,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/limao.png",
         "edition": "custom",
         "name": "狸猫",
-        "ability": "每个夜晚*，你要选择一名除你及旅行者以外的玩家：如果恶魔在今晚杀死了他，你和他交换角色，然后你醉酒。",
+        "ability": "每个夜晚*，你要选择一名玩家：如果他是善良角色且当晚被邪恶角色杀死，你和他交换角色。",
         "team": "townsfolk",
         "sch_team": "镇民",
         "firstNight": 0,
@@ -1777,7 +1777,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/tixingguan.png",
         "edition": "custom",
         "name": "提刑官",
-        "ability": "在你首次提名玩家后，你会在当晚得知他的角色。外来者会被你的能力当作爪牙或恶魔角色。",
+        "ability": "在你首次提名玩家后，你会在当晚得知他的角色。恶魔会被你的能力当作善良角色。",
         "team": "townsfolk",
         "sch_team": "镇民",
         "firstNight": 0,
@@ -1795,7 +1795,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/xuncha.png",
         "edition": "custom",
         "name": "巡察",
-        "ability": "每个夜晚*，你要选择除你以外的两个善良角色：如果他们都存活，他们当晚不会死亡。",
+        "ability": "每个夜晚*，你要选择两个善良角色（与上个夜晚不同）：如果他们都存活，他们当晚不会死亡。",
         "team": "townsfolk",
         "sch_team": "镇民",
         "firstNight": 0,
@@ -1886,15 +1886,15 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/zhen.png",
         "edition": "custom",
         "name": "鸩",
-        "ability": "每局游戏限一次，在夜晚时*，你可以选择一个镇民角色：如果他在场，他醉酒并死亡。",
+        "ability": "每局游戏限一次，在夜晚时*，你可以选择一个镇民角色：如果他在场，他中毒并死亡。",
         "team": "townsfolk",
         "sch_team": "镇民",
         "firstNight": 0,
         "otherNight": 60.5,
         "firstNightReminder": "",
-        "otherNightReminder": "唤醒鸩，如果鸩使用能力，让鸩选择一个镇民角色：如果这个镇民角色在场，这个镇民角色先醉酒，再死亡。",
+        "otherNightReminder": "唤醒鸩，如果鸩使用能力，让鸩选择一个镇民角色：如果这个镇民角色在场，这个镇民角色先中毒，再死亡。",
         "reminders": [
-            "醉酒",
+            "中毒",
             "死亡"
         ],
         "remindersGlobal": [],
@@ -2123,7 +2123,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/snitch.png",
         "edition": "custom",
         "name": "告密者",
-        "ability": "爪牙会在其首个夜晚得知三个不在场的善良角色。",
+        "ability": "爪牙会在其首个夜晚得知三个伪装。",
         "team": "outsider",
         "sch_team": "外来者",
         "firstNight": 2005,
@@ -2811,16 +2811,37 @@ const _characters = {
         "reminders": [],
         "setup": true
     },
+    "wizard": {
+        "id": "poisoner",
+        "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/wizard.png",
+        "edition": "custom",
+        "name": "巫师",
+        "ability": "每局游戏限一次，你可以向说书人许愿。如果愿望被实现，可能会伴随着代价和线索。",
+        "team": "minion",
+        "sch_team": "爪牙",
+        "firstNight": 0,
+        "otherNight": 0,
+        "reminders": [
+            "？"
+        ],
+        "setup": true
+    },
     "xaan": {
         "id": "poisoner",
-        "image": "https://clocktower-wiki.gstonegames.com/images/thumb/b/b9/Xaan.png/300px-Xaan.png",
+        "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/xaan.png",
         "edition": "custom",
         "name": "限",
-        "ability": "在等同初始外来者数量的夜晚，所有镇民玩家中毒直到下个黄昏。[任意数量外来者]",
+        "ability": "在等同于初始外来者数量的夜晚，所有镇民玩家中毒直到下个黄昏。[外来者数量任意]",
         "team": "minion",
         "sch_team": "爪牙",
         "firstNight": 3017.5,
         "otherNight": 8.5,
+        "reminders": [
+            "第一夜",
+            "第二夜",
+            "第三夜",
+            "大限已至"
+        ],
         "setup": true
     },
     "humeiniang": {
@@ -3188,7 +3209,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/legion.png",
         "edition": "custom",
         "name": "军团",
-        "ability": "每个夜晚*，可能有一名玩家死亡。如果一项提名只有邪恶玩家投票，投票无效。你也会被当作是爪牙。[半数以上玩家为军团]",
+        "ability": "每个夜晚*，可能有一名玩家死亡。如果一项提名只有邪恶玩家投票，投票无效。你也会被当作是爪牙。[多数玩家为军团]",
         "team": "demon",
         "sch_team": "恶魔",
         "firstNight": 0,
