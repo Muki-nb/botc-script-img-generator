@@ -124,6 +124,7 @@ function createCharacter(character, object){
 function color(node){
     let html = node.innerHTML;
     const red = [
+        "未正常生效",
         "选择或影响",
         "死于处决",
         "恶魔角色",
@@ -136,6 +137,7 @@ function color(node){
         "小恶魔",
         "小怪宝",
         "狐媚娘",
+        "维齐尔",
         "被处决",
         "杀死",
         "死亡",
@@ -166,6 +168,7 @@ function color(node){
         "守夜人",
         "外来者",
         "农夫",
+        "书生",
         "疯子",
         "国王",
         "醉酒",
