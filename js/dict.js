@@ -3315,7 +3315,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/lord_of_typhon.png",
         "edition": "custom",
         "name": "堤丰之首",
-        "ability": "每个夜晚*，你要选择一名玩家：他死亡。<br>[邪恶玩家全部邻座，你位于正中，+1爪牙，-或+任意数量外来者]",
+        "ability": "每个夜晚*，你要选择一名玩家：他死亡。<br>[邪恶角色全部邻座，你位于正中，+1爪牙，-或+任意数量外来者]",
         "team": "demon",
         "sch_team": "恶魔",
         "firstNight": 1.4,
