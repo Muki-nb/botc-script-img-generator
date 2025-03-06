@@ -2390,7 +2390,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/rulianshi.png",
         "edition": "custom",
         "name": "入殓师",
-        "ability": "如果你提名了恶魔且他死于这次处决，你会变成邪恶的恶魔。当剩余存活玩家小于等于四人时（旅行者除外），你失去能力。",
+        "ability": "如果你提名了恶魔且他死于这次处决，你会变成那个邪恶的恶魔。当剩余存活玩家小于等于四人时（旅行者除外），你失去能力。",
         "team": "outsider",
         "sch_team": "外来者",
         "firstNight": 0,
