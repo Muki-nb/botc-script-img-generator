@@ -2938,7 +2938,7 @@ const _characters = {
         "image": "https://oss.gstonegames.com/data_file/clocktower/web/icons/huapi.png",
         "edition": "custom",
         "name": "画皮",
-        "ability": "在你的首个夜晚，你要选择一名存活玩家：他死亡但会被当作存活。当他下一次死亡时，他重生，随后你重获能力。",
+        "ability": "在你的首个夜晚，你要选择一名存活玩家：他死亡但会被当作存活。当他下一次即将死亡时，他重生，随后你重获能力。",
         "team": "minion",
         "sch_team": "爪牙",
         "firstNight": 3017.3,
